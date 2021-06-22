@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}YEARBOOK{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<style>
+  a:link {
+       color: black;
+       background-color: transparent;
+       text-decoration: none;
+       }
+  a:hover {
+       color: red;
+       background-color: transparent;
+       text-decoration: none;
+       }
+  a:unvisited {
+       color: red;
+       background-color: transparent;
+       text-decoration: none;
+       }
+</style>
+<br><br>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'add-page' %}">Add Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+</ul>
+<br><br>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">{% for item in object_list %}
+    <li class="list-group-item"><a href="{% url 'page-detail' item.pk %}">{{item.name}}</a></li>
+      {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+</body>

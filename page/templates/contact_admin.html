@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CONTACT ADMIN{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<br> <br>
+<style>
+    .bottom-left {
+  position: absolute;
+  bottom: 50%;
+  left: 35%;
+}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy">
+<style>
+h2 {
+  font-family: "Satisfy", sans-serif;
+  font-size: 30px;
+}
+</style>
+<div class="container-fluid" align="center">
+    <figure class="figure">
+        <img src="https://wallpaperaccess.com/full/797806.jpg"
+             class="figure-img img-fluid rounded" alt="..." height="400" width="500">
+        <div class="bottom-left" style="color:powderblue"><h2>Sanya <3</h2></div>
+        <figcaption class="figure-caption text-center" style="color:darkslategray">
+            Hi, Admin here! <br>
+            Please reach out to me at saniasinha2003@gmail.com for any queries or feedback.
+            I would love to hear from you. <br>Thank you for visiting Yearbook ❤
+            <br><a class="btn btn-outline-info" href="{% url 'page-detail' 10 %}" role="button">
+            View Profile</a>
+        </figcaption>
+    </figure>
+</div>
+{% endblock %}
+</body>
+</html>

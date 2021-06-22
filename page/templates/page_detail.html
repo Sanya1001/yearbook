@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}USER PROFILE{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<br> <br>
+<div class="card" style="width: 18rem;">
+    <img src="{{ page.image.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">
+            {{ page.name }} | <small>{{ page.stream }}</small>
+            {% if page.pk == 10 %}
+            <span class="badge bg-danger">Admin</span>
+            {% endif %}
+        </h5>
+        <p class="card-text">{{ page.quote }}</p>
+    </div>
+    <div class="card-body">
+        <a class="btn btn-primary" href="{% url 'home' %}" role="button">Back</a>
+        <a class="btn btn-primary" href="{% url 'contact-detail' page.pk %}" role="button">Contact</a>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

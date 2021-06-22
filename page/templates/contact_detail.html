@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CONTACT INFO{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<br><br>
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ page.name }}</h5>
+    <p class="card-text">Phone: {{ page.phone }}<br>Mail: {{ page.mail }}</p>
+    <a href="{% url 'page-detail' page.pk %}" class="btn btn-primary" role="button">Back</a>
+  </div>
+</div>
+
+{% endblock %}
+</body>
+</html>
